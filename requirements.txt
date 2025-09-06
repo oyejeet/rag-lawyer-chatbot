@@ -1,0 +1,55 @@
+# LangChain Core
+langchain
+langchain-core
+
+# OpenAI Integration
+langchain-openai
+openai
+
+# Anthropic Integration
+langchain-anthropic
+
+# Google Gemini (PaLM) Integration
+langchain-google-genai
+google-generativeai
+
+# Hugging Face Integration
+langchain-huggingface
+transformers
+huggingface-hub
+
+# Environment Variable Management
+python-dotenv
+
+# Machine Learning Utilities
+numpy
+scikit-learn
+
+# For Text Document Loaders
+langchain-community
+
+# For Pdf Document Loaders
+pypdf
+
+# For Web Based Loaders
+beautifulsoup4
+
+# Vector stores
+chromadb
+tiktoken
+
+# For retrievers
+faiss-cpu
+wikipedia
+
+# For YouTube Chatbot
+youtube-transcript-api
+
+# For Ollama
+langchain-ollama
+
+# For groq
+langchain_groq
+
+# For Extracting data from PDF, we will be using pdfplumber
+pdfplumber
