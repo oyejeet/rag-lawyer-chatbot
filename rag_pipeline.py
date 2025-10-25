@@ -6,7 +6,7 @@ from vector_database import faiss_db
 from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
-llm_model = ChatGroq(model='deepseek-r1-distill-llama-70b')
+llm_model = ChatGroq(model='llama-3.3-70b-versatile')
 
 # Step2 : Retreiving docs
 
