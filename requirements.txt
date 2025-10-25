@@ -45,8 +45,8 @@ wikipedia
 # For YouTube Chatbot
 youtube-transcript-api
 
-# For Ollama
-langchain-ollama
+# For OpenAI embeddings (cloud deployment)
+langchain-openai
 
 # For groq
 langchain-groq

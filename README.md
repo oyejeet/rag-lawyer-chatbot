@@ -1,6 +1,6 @@
 # RAG Lawyer Chatbot
 
-A **PDF-based RAG (Retrieval-Augmented Generation) chatbot** that answers legal questions using uploaded documents. It leverages **Llama 3.3 70B** as the LLM and **FAISS** as the vector store for semantic search.
+A **PDF-based RAG (Retrieval-Augmented Generation) chatbot** that answers legal questions using uploaded documents. It leverages **Llama 3.3 70B** as the LLM, **OpenAI embeddings** for vectorization, and **FAISS** as the vector store for semantic search.
 
 ---
 
@@ -54,8 +54,9 @@ ollama pull deepseek-r1:1.5b
 6. Set up your API keys:
 
 ```bash
-# Edit the .env file and add your Groq API key
+# Edit the .env file and add your API keys
 GROQ_API_KEY=your_groq_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 ### Running the Application
@@ -78,5 +79,5 @@ streamlit run frontend.py
 
 - **Python 3.8+**
 - **Groq API Key** (get it from https://console.groq.com/)
-- **Ollama** installed locally
+- **OpenAI API Key** (get it from https://platform.openai.com/api-keys)
 - **Internet connection** for API calls

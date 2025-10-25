@@ -40,25 +40,22 @@ def create_chunks(documents):
 if documents:
     text_chunks = create_chunks(documents)
     
-    # Step3: Setup Embeddings model, (using deepseek R1 with Ollama) 
-    ollama_model_name = 'deepseek-r1:1.5b'
-    
-    def get_embedding_model(ollama_model_name):
-        embeddings= OllamaEmbeddings(model= ollama_model_name)
+    # Step3: Setup Embeddings model (using OpenAI embeddings for cloud deployment)
+    def get_embedding_model():
+        embeddings = OpenAIEmbeddings()
         return embeddings
     
     # Step4: Index documents, Store embeddings in Vector Stores
     FAISS_DB_PATH = "vectorStore/db_faiss"
-    faiss_db = FAISS.from_documents(text_chunks, get_embedding_model(ollama_model_name))
+    faiss_db = FAISS.from_documents(text_chunks, get_embedding_model())
     faiss_db.save_local(FAISS_DB_PATH)
     print("Vector database created successfully")
 else:
     print("No documents to process, creating empty vector database")
     # Create an empty FAISS database
     from langchain_community.vectorstores import FAISS
-    from langchain_ollama import OllamaEmbeddings
-    ollama_model_name = 'deepseek-r1:1.5b'
-    embeddings = OllamaEmbeddings(model=ollama_model_name)
+    from langchain_openai import OpenAIEmbeddings
+    embeddings = OpenAIEmbeddings()
     faiss_db = FAISS.from_texts([""], embeddings)
     FAISS_DB_PATH = "vectorStore/db_faiss"
     faiss_db.save_local(FAISS_DB_PATH)
